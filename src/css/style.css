@@ -1,0 +1,118 @@
+body {
+    width: 1200px;
+    /*height: 5799px;*/
+    font-family: 'Montserrat', sans-serif;
+    margin: 0 auto;
+}
+.partizan {
+    height: 500px;
+}
+.partizan {
+    height: 500px;
+}
+
+
+h1 {
+    color:  #4e4e4e;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+}
+h1:after {
+    content: '';
+    display: block;
+    width: 76px;
+    height: 1px;
+    background-color: #18cfab;
+    margin: 30px auto;
+    box-shadow: 10px 4px 1px 0px #18cfab;
+}
+
+
+.services-conteiner{
+    height: 575px;
+}
+.services-menu {
+    text-align: center;
+    padding-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.services-menu {
+    display: flex;
+}
+.services-menu ul {
+    display: flex;
+    list-style: none;
+    margin-top: 70px;
+}
+.services-menu ul li{
+    border: 1px solid gainsboro;
+    background-color: #f8fcfe;
+    padding: 27px 45px;
+    font-size: 15.98px;
+    border-right: none;
+    color: #717171;
+    text-decoration: none;
+    cursor: pointer;
+}
+.services-menu ul li:hover{
+    background-color: #18cfab;
+}
+.services-menu ul li:nth-of-type(n+5){
+    border-right: 1px solid gainsboro;
+}
+.services-text-picture{
+    display: flex;
+    padding-top: 25px;
+    margin-left: 52px;
+}
+.services-text{
+    overflow: hidden;
+    margin-left: 20px;
+    color:  #777777;
+    font-size: 13.64px;
+    font-weight: 300;
+    text-align: justify;
+}
+
+.everything-conteiner {
+    height: 474px;
+    background-image: url("../img/section-2.jpg");
+    background-size: cover;
+}
+.everything-is-ready {
+    background-color: rgba(0, 0, 0, 0.78);
+    height: 474px;
+
+    /*padding-top: 126px;*/
+}
+.everything-is-ready {
+    text-align: center;
+}
+.every{
+    color:  #18cfab;
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.smooth{
+    color:  #d8d8d8;
+    font-size: 16px;
+    font-weight: 400;
+}
+.email {
+    width: 165px;
+    height: 61px;
+    background-color: #18cfab;
+    color: #ffffff;
+    border-radius: 3px;
+    font-size: 13px;
+    font-weight: 700;
+    margin:60px 0 80px 0;
+    padding:26px 25px;
+    text-transform: uppercase;
+}
+
+
