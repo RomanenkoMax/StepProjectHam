@@ -31,3 +31,21 @@
     border-right: 29px solid transparent;
     left: 0;
 }
+
+.parallel {
+    width: 80px;
+    height: 3px;
+    transform: skew(70deg);
+    border-top: 1px solid #18cfab;
+    border-bottom: 1px solid #18cfab;
+
+}
+a.pic {
+    background: url('../img/work/wordpress1.jpg'); /* Путь к файлу с исходным рисунком  */
+    display: block; /*  Рисунок как блочный элемент */
+    width: 284px; /* Ширина рисунка */
+    height: 206px; /*  Высота рисунка */
+}
+a.pic:hover {
+    background: url('../img/work/web-design1.jpg'); /* Путь к файлу с заменяемым рисунком  */
+}
