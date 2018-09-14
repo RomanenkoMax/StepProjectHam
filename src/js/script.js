@@ -21,8 +21,8 @@ let picturesDiv = document.getElementsByClassName('pictures')[0];
 
 let selectedPic = document.getElementsByClassName('pic-menu-item');
 selectedPic[0].addEventListener('click', function () {
-    while (picItems.length > 12){
-        picturesDiv.removeChild(picItems[picItems.length-1]);
+    while (picItems.length > 12) {
+        picturesDiv.removeChild(picItems[picItems.length - 1]);
     }
     for (let i = 0; i < picItems.length; i++) {
         if (i < 3) {
@@ -41,8 +41,8 @@ selectedPic[0].addEventListener('click', function () {
 });
 
 selectedPic[1].addEventListener('click', function () {
-    while (picItems.length > 12){
-        picturesDiv.removeChild(picItems[picItems.length-1]);
+    while (picItems.length > 12) {
+        picturesDiv.removeChild(picItems[picItems.length - 1]);
     }
     for (let i = 0; i < picItems.length; i++) {
         picItems[i].style.background = `url('img/work/graphic-design${i + 1}.jpg')`;
@@ -50,8 +50,8 @@ selectedPic[1].addEventListener('click', function () {
 });
 
 selectedPic[2].addEventListener('click', function () {
-    while (picItems.length > 12){
-        picturesDiv.removeChild(picItems[picItems.length-1]);
+    while (picItems.length > 12) {
+        picturesDiv.removeChild(picItems[picItems.length - 1]);
     }
     for (let i = 0; i < picItems.length; i++) {
         picItems[i].style.background = `url('img/work/web-design${i + 1}.jpg')`;
@@ -59,8 +59,8 @@ selectedPic[2].addEventListener('click', function () {
 });
 
 selectedPic[3].addEventListener('click', function () {
-    while (picItems.length > 12){
-        picturesDiv.removeChild(picItems[picItems.length-1]);
+    while (picItems.length > 12) {
+        picturesDiv.removeChild(picItems[picItems.length - 1]);
     }
     for (let i = 0; i < picItems.length; i++) {
         picItems[i].style.background = `url('img/work/landing-page${i + 1}.jpg')`;
@@ -68,8 +68,8 @@ selectedPic[3].addEventListener('click', function () {
 });
 
 selectedPic[4].addEventListener('click', function () {
-    while (picItems.length > 12){
-        picturesDiv.removeChild(picItems[picItems.length-1]);
+    while (picItems.length > 12) {
+        picturesDiv.removeChild(picItems[picItems.length - 1]);
     }
     for (let i = 0; i < picItems.length; i++) {
         picItems[i].style.background = `url('img/work/wordpress${i + 1}.jpg')`;
@@ -87,3 +87,117 @@ load.addEventListener('click', function (event) {
         cont.appendChild(link);
     }
 });
+
+let load1 = document.getElementsByName('load1')[0];
+let msnry;
+let grid = document.querySelector('div.best-pic');
+msnry = new Masonry(grid, {
+    itemSelector: '.best-item',
+    columnWidth: '.best-sizer',
+    percentPosition: true,
+    // gutter: 1,
+    stagger: 30,
+});
+
+load1.addEventListener('click', function (event) {
+    event.preventDefault();
+    let sniped = document.createDocumentFragment();
+    let elem0 = document.createElement('img');
+    elem0.setAttribute('src', 'img/masonry/5.jpg');
+    let elem1 = document.createElement('img');
+    elem1.setAttribute('src', 'img/masonry/6.jpg');
+    let elem2 = document.createElement('img');
+    elem2.setAttribute('src', 'img/masonry/7.jpg');
+    let elem3 = document.createElement('img');
+    elem3.setAttribute('src', 'img/masonry/3.jpg');
+    let elem4 = document.createElement('img');
+    elem4.setAttribute('src', 'img/masonry/1.jpg');
+
+    let cont = document.createElement('div');
+    cont.setAttribute('class', 'best-item');
+    cont.appendChild(elem0);
+
+    let cont1 = document.createElement('div');
+    cont1.setAttribute('class', 'best-item');
+    cont1.appendChild(elem1);
+
+    let cont2 = document.createElement('div');
+    cont2.setAttribute('class', 'best-item');
+    cont2.appendChild(elem2);
+
+    let cont3 = document.createElement('div');
+    cont3.setAttribute('class', 'best-item');
+    cont3.appendChild(elem3);
+
+    let cont4 = document.createElement('div');
+    cont4.setAttribute('class', 'best-item');
+    cont4.appendChild(elem4);
+
+    sniped.appendChild(cont);
+    sniped.appendChild(cont1);
+    sniped.appendChild(cont2);
+    sniped.appendChild(cont3);
+    sniped.appendChild(cont4);
+
+    let bestPic = document.querySelector('div.best-pic');
+    bestPic.appendChild(sniped);
+
+     msnry = new Masonry(bestPic, {
+        itemSelector: '.best-item',
+        columnWidth: '.best-sizer',
+        percentPosition: true,
+        // gutter: 1,
+        stagger: 30,
+    });
+    // imagesLoaded( bestPic ).on( 'progress', function() {
+    //     // layout Masonry after each image loads
+    //
+    // });
+    msnry.layout();
+});
+
+
+// let grid = document.querySelector('.best-pic');
+// console.log(grid);
+// let msnry = new Masonry(grid, {
+//     itemSelector: '.best-item',
+//     columnWidth: '.best-sizer',
+//     percentPosition: true,
+//     // gutter: 1,
+//     stagger: 30,
+// });
+
+grid.addEventListener('click', function (event) {
+    msnry = new Masonry(grid, {
+        itemSelector: '.best-item',
+        columnWidth: '.best-sizer',
+        percentPosition: true,
+        // gutter: 1,
+        stagger: 30,
+    });
+    // console.log(grid);
+    // don't proceed if item was not clicked on
+    if (!matchesSelector(event.target.parentElement, '.best-item')) {
+        return;
+    }
+    // change size of item via class
+    if (matchesSelector(event.target.parentElement, '.best-item-9')) {
+        event.target.parentElement.classList.toggle('grid-item--gigante-9');
+        msnry.layout();
+    } else {
+        event.target.parentElement.classList.toggle('grid-item--gigante');
+        // trigger layout
+        msnry.layout();
+    }
+});
+
+// let a = document.getElementsByClassName('butt');
+//
+// for (let i = 0; i < a.length; i++){
+//     a[i].addEventListener('click', function (event) {
+//         a[i].preventDefault();
+//     })
+// }
+
+let toInsert = document.getElementsByClassName('best-pic')[0];
+console.log(toInsert.innerHTML);

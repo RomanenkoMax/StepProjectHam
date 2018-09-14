@@ -49,3 +49,23 @@ a.pic {
 a.pic:hover {
     background: url('../img/work/web-design1.jpg'); /* Путь к файлу с заменяемым рисунком  */
 }
+
+.outer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.outer-1 {
+    flex-direction: row-reverse;
+}
+
+.inner {
+    width: 160px;
+    height: 60px;
+    background-color: #717171;
+    color: blue;
+    text-align: center;
+    margin-right: 5px;
+
+}
