@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+}
 body {
     margin: 0;
     padding: 0;
@@ -59,23 +62,36 @@ body {
     list-style-type: none;
 }
 
+li a {
+    color: #b8b8b8;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+
+}
+
+.menu-items li a:hover:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #18cfab;
+    /*border: 2px solid #18cfab;*/
+    left: 0;
+    bottom: -52px;
+}
+
 .menu-items > li {
     display: inline;
     margin-left: 17px;
-    padding-bottom: 50px;
 }
 
-.menu-items > li:hover {
-    color: #18cfab;
-    border-bottom: 2px solid #18cfab;
-    cursor: pointer;
-}
-
-.white {
-    height: 1000px;
-    width: 100%;
-    background-color: #fff;
-}
+/*.menu-items > li:hover {*/
+    /*color: #18cfab;*/
+    /*border-bottom: 2px solid #18cfab;*/
+/*}*/
 
 .creative {
     height: 1000px;
@@ -119,6 +135,7 @@ body {
 }
 
 .btn-1, .btn-2 {
+    display: inline-block;
     height: 60px;
     width: 165px;
     border-radius: 4px;
@@ -126,9 +143,14 @@ body {
     margin-right: 28px;
     text-transform: uppercase;
     background-color: #18cfab;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 700;
     color: #ffffff;
+    text-decoration: none;
+    line-height: 60px;
+    text-align: center;
+    cursor: pointer;
+    /*overflow: hidden;*/
 }
 
 .btn-2 {
@@ -314,6 +336,7 @@ body {
 
 .best-item {
     float: left;
+    cursor: pointer;
     /*margin-bottom: 3px;*/
 }
 

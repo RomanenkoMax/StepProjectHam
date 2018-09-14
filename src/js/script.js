@@ -38,6 +38,9 @@ selectedPic[0].addEventListener('click', function () {
             picItems[i].style.background = `url('img/work/wordpress${i + 1}.jpg')`;
         }
     }
+    let link = document.querySelector('a[name=load]');
+    link.style.display = 'inline-block';
+    a = 0;
 });
 
 selectedPic[1].addEventListener('click', function () {
@@ -47,6 +50,9 @@ selectedPic[1].addEventListener('click', function () {
     for (let i = 0; i < picItems.length; i++) {
         picItems[i].style.background = `url('img/work/graphic-design${i + 1}.jpg')`;
     }
+    let link = document.querySelector('a[name=load]');
+    link.style.display = 'inline-block';
+    a = 0;
 });
 
 selectedPic[2].addEventListener('click', function () {
@@ -56,6 +62,9 @@ selectedPic[2].addEventListener('click', function () {
     for (let i = 0; i < picItems.length; i++) {
         picItems[i].style.background = `url('img/work/web-design${i + 1}.jpg')`;
     }
+    let link = document.querySelector('a[name=load]');
+    link.style.display = 'inline-block';
+    a = 0;
 });
 
 selectedPic[3].addEventListener('click', function () {
@@ -65,6 +74,9 @@ selectedPic[3].addEventListener('click', function () {
     for (let i = 0; i < picItems.length; i++) {
         picItems[i].style.background = `url('img/work/landing-page${i + 1}.jpg')`;
     }
+    let link = document.querySelector('a[name=load]');
+    link.style.display = 'inline-block';
+    a = 0;
 });
 
 selectedPic[4].addEventListener('click', function () {
@@ -74,17 +86,26 @@ selectedPic[4].addEventListener('click', function () {
     for (let i = 0; i < picItems.length; i++) {
         picItems[i].style.background = `url('img/work/wordpress${i + 1}.jpg')`;
     }
+    let link = document.querySelector('a[name=load]');
+    link.style.display = 'inline-block';
+    a = 0;
 });
 
 let load = document.getElementsByName('load')[0];
-
+let a = 0;
 load.addEventListener('click', function (event) {
+    a++;
     let cont = document.getElementsByClassName('pictures')[0];
     for (let i = 1; i < 13; i++) {
         let link = document.createElement("a")
         link.className = "pic-item";
         link.style.background = `url('img/work/graphic-design${i}.jpg')`;
         cont.appendChild(link);
+    }
+    if (a >= 2) {
+        let link = document.querySelector('a[name=load]');
+        console.log(link);
+        link.style.display = 'none';
     }
 });
 
@@ -98,9 +119,12 @@ msnry = new Masonry(grid, {
     // gutter: 1,
     stagger: 30,
 });
+let i = 0;
 
 load1.addEventListener('click', function (event) {
+
     event.preventDefault();
+    i++;
     let sniped = document.createDocumentFragment();
     let elem0 = document.createElement('img');
     elem0.setAttribute('src', 'img/masonry/5.jpg');
@@ -142,30 +166,20 @@ load1.addEventListener('click', function (event) {
     let bestPic = document.querySelector('div.best-pic');
     bestPic.appendChild(sniped);
 
-     msnry = new Masonry(bestPic, {
+    msnry = new Masonry(bestPic, {
         itemSelector: '.best-item',
         columnWidth: '.best-sizer',
         percentPosition: true,
         // gutter: 1,
         stagger: 30,
     });
-    // imagesLoaded( bestPic ).on( 'progress', function() {
-    //     // layout Masonry after each image loads
-    //
-    // });
     msnry.layout();
+    if (i >= 2) {
+        let link = document.querySelector('a[name=load1]');
+        console.log(link);
+        link.style.display = 'none';
+    }
 });
-
-
-// let grid = document.querySelector('.best-pic');
-// console.log(grid);
-// let msnry = new Masonry(grid, {
-//     itemSelector: '.best-item',
-//     columnWidth: '.best-sizer',
-//     percentPosition: true,
-//     // gutter: 1,
-//     stagger: 30,
-// });
 
 grid.addEventListener('click', function (event) {
     msnry = new Masonry(grid, {
@@ -175,29 +189,19 @@ grid.addEventListener('click', function (event) {
         // gutter: 1,
         stagger: 30,
     });
-    // console.log(grid);
-    // don't proceed if item was not clicked on
+
     if (!matchesSelector(event.target.parentElement, '.best-item')) {
         return;
     }
-    // change size of item via class
+
     if (matchesSelector(event.target.parentElement, '.best-item-9')) {
         event.target.parentElement.classList.toggle('grid-item--gigante-9');
         msnry.layout();
     } else {
         event.target.parentElement.classList.toggle('grid-item--gigante');
-        // trigger layout
+
         msnry.layout();
     }
 });
 
-// let a = document.getElementsByClassName('butt');
-//
-// for (let i = 0; i < a.length; i++){
-//     a[i].addEventListener('click', function (event) {
-//         a[i].preventDefault();
-//     })
-// }
 
-let toInsert = document.getElementsByClassName('best-pic')[0];
-console.log(toInsert.innerHTML);
