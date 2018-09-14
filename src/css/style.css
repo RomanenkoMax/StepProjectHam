@@ -36,7 +36,6 @@ body {
 .ham-logo {
     display: inline-block;
     height: 67px;
-    color: white;
 }
 
 .ham-logo > span {
@@ -45,9 +44,24 @@ body {
     margin-left: 5px;
 }
 
+.ham-logo div a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.ham-logo span a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
 .ham-logo > span > span {
     font-weight: 700;
     color: #18cfab;
+}
+
+.ham-logo span span a {
+    color: #18cfab;
+
 }
 
 .ham-menu-text {

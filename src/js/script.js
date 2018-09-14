@@ -94,6 +94,12 @@ selectedPic[4].addEventListener('click', function () {
 let load = document.getElementsByName('load')[0];
 let a = 0;
 load.addEventListener('click', function (event) {
+    startLoad(this);
+    setTimeout(addPic1(), 3000);
+    // stopLoad(this);
+});
+
+function addPic1() {
     a++;
     let cont = document.getElementsByClassName('pictures')[0];
     for (let i = 1; i < 13; i++) {
@@ -107,7 +113,7 @@ load.addEventListener('click', function (event) {
         console.log(link);
         link.style.display = 'none';
     }
-});
+}
 
 let load1 = document.getElementsByName('load1')[0];
 let msnry;
@@ -122,7 +128,6 @@ msnry = new Masonry(grid, {
 let i = 0;
 
 load1.addEventListener('click', function (event) {
-
     event.preventDefault();
     i++;
     let sniped = document.createDocumentFragment();
@@ -204,4 +209,15 @@ grid.addEventListener('click', function (event) {
     }
 });
 
+function startLoad(elem) {
+    console.log(elem);
+    console.log(elem.previousElementSibling);
+    elem.previousElementSibling.style.display = 'inline-block';
+    console.log(elem.previousElementSibling);
+}
 
+function stopLoad(elem) {
+    console.log(elem.previousElementSibling);
+    elem.previousElementSibling.style.display = 'none';
+    console.log(elem.previousElementSibling);
+}

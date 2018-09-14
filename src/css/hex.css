@@ -11,9 +11,11 @@
     display: inline-block;
     /*vertical-align: middle;*/
 }
+
 .square:before {
     content: "";
-    width: 0; height: 0;
+    width: 0;
+    height: 0;
     border-bottom: 17px solid #18cfab;
     border-left: 29px solid transparent;
     border-right: 29px solid transparent;
@@ -21,6 +23,7 @@
     top: -17px;
     left: 0;
 }
+
 .square:after {
     content: "";
     width: 0;
@@ -32,40 +35,105 @@
     left: 0;
 }
 
-.parallel {
-    width: 80px;
-    height: 3px;
-    transform: skew(70deg);
-    border-top: 1px solid #18cfab;
-    border-bottom: 1px solid #18cfab;
-
-}
-a.pic {
-    background: url('../img/work/wordpress1.jpg'); /* Путь к файлу с исходным рисунком  */
-    display: block; /*  Рисунок как блочный элемент */
-    width: 284px; /* Ширина рисунка */
-    height: 206px; /*  Высота рисунка */
-}
-a.pic:hover {
-    background: url('../img/work/web-design1.jpg'); /* Путь к файлу с заменяемым рисунком  */
+.bigSqr {
+    position: relative;
+    display: none;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    transform-origin: bottom left;
+    animation: bigSqrShrink 1s linear infinite;
+    margin-bottom: 30px;
 }
 
-.outer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+.square-anim {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #18cfab;
 }
 
-.outer-1 {
-    flex-direction: row-reverse;
+.first {
+    left: 0;
+    top: 20px;
 }
 
-.inner {
-    width: 160px;
-    height: 60px;
-    background-color: #717171;
-    color: blue;
-    text-align: center;
-    margin-right: 5px;
+.second {
+    left: 20px;
+    top: 20px;
+    animation: drop2 1s linear infinite;
+}
 
+.third {
+    left: 0;
+    top: 0;
+    animation: drop3 1s linear infinite;
+}
+
+.fourth {
+    left: 20px;
+    top: 0;
+    animation: drop4 1s linear infinite;
+}
+
+.text {
+    line-height: 16px;
+    font-family: "Open Sans", "Roboto", Arial, sans-serif;
+    font-weight: 400;
+    color: #18cfab;
+    display: block;
+    margin: 10px auto;
+    padding: 3px;
+}
+
+@keyframes bigSqrShrink {
+
+    0% {
+        transform: scale(1);
+    }
+    90% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.5);
+    }
+}
+
+@keyframes drop2 {
+
+    0% {
+        transform: translateY(-50px);
+    }
+    25% {
+        transform: translate(0);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+@keyframes drop3 {
+
+    0% {
+        transform: translateY(-50px);
+    }
+    50% {
+        transform: translate(0);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+@keyframes drop4 {
+
+    0% {
+        transform: translateY(-50px);
+    }
+    75% {
+        transform: translate(0);
+    }
+    100% {
+        transform: translate(0);
+    }
 }
