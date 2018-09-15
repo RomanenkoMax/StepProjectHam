@@ -1,5 +1,4 @@
 let pic = document.getElementsByClassName('pic-menu')[0];
-console.log(pic);
 pic.onclick = function (event) {
     let target = event.target;
     target.classList.add('active-work');
@@ -94,9 +93,12 @@ selectedPic[4].addEventListener('click', function () {
 let load = document.getElementsByName('load')[0];
 let a = 0;
 load.addEventListener('click', function (event) {
-    startLoad(this);
-    setTimeout(addPic1(), 3000);
-    // stopLoad(this);
+    let elem = this;
+    startLoad(elem);
+    setTimeout(function () {
+        stopLoad(elem);
+        addPic1();
+    }, 3000);
 });
 
 function addPic1() {
@@ -127,8 +129,7 @@ msnry = new Masonry(grid, {
 });
 let i = 0;
 
-load1.addEventListener('click', function (event) {
-    event.preventDefault();
+function addPic2 () {
     i++;
     let sniped = document.createDocumentFragment();
     let elem0 = document.createElement('img');
@@ -175,7 +176,7 @@ load1.addEventListener('click', function (event) {
         itemSelector: '.best-item',
         columnWidth: '.best-sizer',
         percentPosition: true,
-        // gutter: 1,
+        // gutter: 10,
         stagger: 30,
     });
     msnry.layout();
@@ -184,6 +185,16 @@ load1.addEventListener('click', function (event) {
         console.log(link);
         link.style.display = 'none';
     }
+};
+
+load1.addEventListener('click', function (event) {
+    event.preventDefault();
+    let elem = this;
+    startLoad(elem);
+    setTimeout(function () {
+        stopLoad(elem);
+        addPic2();
+    }, 3000);
 });
 
 grid.addEventListener('click', function (event) {
@@ -210,13 +221,14 @@ grid.addEventListener('click', function (event) {
 });
 
 function startLoad(elem) {
-    console.log(elem);
-    console.log(elem.previousElementSibling);
+    // console.log(elem);
+    // console.log(elem.previousElementSibling);
     elem.previousElementSibling.style.display = 'inline-block';
-    console.log(elem.previousElementSibling);
+    // console.log(elem.previousElementSibling);
 }
 
 function stopLoad(elem) {
+    console.log(elem);
     console.log(elem.previousElementSibling);
     elem.previousElementSibling.style.display = 'none';
     console.log(elem.previousElementSibling);
